@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="caixa_de_busca">
+            <h1>Buscador de CEP</h1>
+            
+            <div class="buscador">
+                <input type="text" id="Cep" class="input" placeholder="Cep">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                
+            </div>
+           
+
+            <input type="text" id="logradouro" class="input" placeholder="Logradouro">
+            <input type="text" id="bairro" class="input" placeholder="Bairro">
+            <input type="text" id="cidade" class="input" placeholder="Cidade">
+            <input type="text" id="uf" class="input" placeholder="UF">
+            <input type="text" id="ibge" class="input" placeholder="IBGE">
+            <button type="button" onclick="buscacep()">Buscar</button>
+            <button type="button" id="limpar" onclick="limpar()">Limpar</button>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>

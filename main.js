@@ -1,7 +1,7 @@
 function buscacep() {
   var cep = document.getElementById("Cep").value;
-  console.log(cep);
 
+  if (!cep) return alert("insira um cep");
   const busca = new Request("http://viacep.com.br/ws/" + cep + "/json/");
   let dados;
   fetch(busca)
@@ -18,10 +18,10 @@ function buscacep() {
 }
 
 function limpar() {
-  document.getElementById("cep").value = "";
-  document.getElementById("logradouro").value = "";
-  document.getElementById("bairro").value = "";
-  document.getElementById("cidade").value = "";
-  document.getElementById("uf").value = "";
-  document.getElementById("ibge").value = "";
+  document.getElementById("Cep").value = null;
+  document.getElementById("logradouro").value = null;
+  document.getElementById("bairro").value = null;
+  document.getElementById("cidade").value = null;
+  document.getElementById("uf").value = null;
+  document.getElementById("ibge").value = null;
 }

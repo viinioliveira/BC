@@ -45,6 +45,10 @@ body {
     background-color: rgb(243, 118, 118);
 }
 
+#limpar:hover {
+    background-color: rgb(235, 72, 72);
+}
+
 button:hover {
     background-color: rgb(23, 193, 223);
 }

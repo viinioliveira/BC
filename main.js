@@ -1,27 +1,35 @@
 function buscacep() {
   var cep = document.getElementById("Cep").value;
+  // console.log(cep);
 
-  if (!cep) return alert("insira um cep");
   const busca = new Request("http://viacep.com.br/ws/" + cep + "/json/");
   let dados;
-  fetch(busca)
-    .then((response) => response.json())
-    .then((json) => {
-      dados = json;
-      console.log(dados.logradouro);
-      document.getElementById("logradouro").value = dados.logradouro;
-      document.getElementById("bairro").value = dados.bairro;
-      document.getElementById("cidade").value = dados.localidade;
-      document.getElementById("uf").value = dados.uf;
-      document.getElementById("ibge").value = dados.ibge;
-    });
+
+  if (!cep) alert("Digite um CEP");
+  else {
+    fetch(busca)
+      .then((response) => response.json())
+      .then((json) => {
+        dados = json;
+
+        if (dados.erro) alert("CEP não encontrado");
+        else {
+          // console.log(dados.logradouro);
+          document.getElementById("logradouro").value = dados.logradouro;
+          document.getElementById("bairro").value = dados.bairro;
+          document.getElementById("cidade").value = dados.localidade;
+          document.getElementById("uf").value = dados.uf;
+          document.getElementById("ibge").value = dados.ibge;
+        }
+      });
+  }
 }
 
 function limpar() {
-  document.getElementById("Cep").value = null;
-  document.getElementById("logradouro").value = null;
-  document.getElementById("bairro").value = null;
-  document.getElementById("cidade").value = null;
-  document.getElementById("uf").value = null;
-  document.getElementById("ibge").value = null;
+  document.getElementById("Cep").value = "";
+  document.getElementById("logradouro").value = "";
+  document.getElementById("bairro").value = "";
+  document.getElementById("cidade").value = "";
+  document.getElementById("uf").value = "";
+  document.getElementById("ibge").value = "";
 }

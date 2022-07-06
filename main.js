@@ -1,6 +1,5 @@
 function buscacep() {
   var cep = document.getElementById("Cep").value;
-  // console.log(cep);
 
   const busca = new Request("http://viacep.com.br/ws/" + cep + "/json/");
   let dados;
@@ -12,9 +11,10 @@ function buscacep() {
       .then((json) => {
         dados = json;
 
-        if (dados.erro) alert("CEP não encontrado");
-        else {
-          // console.log(dados.logradouro);
+        if (dados.erro) {
+          alert("CEP não encontrado");
+          limpar();
+        } else {
           document.getElementById("logradouro").value = dados.logradouro;
           document.getElementById("bairro").value = dados.bairro;
           document.getElementById("cidade").value = dados.localidade;
@@ -32,4 +32,10 @@ function limpar() {
   document.getElementById("cidade").value = "";
   document.getElementById("uf").value = "";
   document.getElementById("ibge").value = "";
+}
+
+function modoDark() {
+  let fundo = document.querySelector(".container");
+
+  fundo.style.cssText = "background-color: black";
 }

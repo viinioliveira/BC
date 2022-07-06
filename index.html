@@ -11,6 +11,10 @@
 <body>
     
     <div class="container">
+        <div class="button_dark">
+            <button type="button" onclick="modoDark()">dark</button>
+        </div>
+
         <div class="caixa_de_busca">
             <h1>Buscador de CEP</h1>
             
@@ -21,13 +25,13 @@
             </div>
            
 
-            <input type="text" id="logradouro" class="input" placeholder="Logradouro">
-            <input type="text" id="bairro" class="input" placeholder="Bairro">
-            <input type="text" id="cidade" class="input" placeholder="Cidade">
-            <input type="text" id="uf" class="input" placeholder="UF">
-            <input type="text" id="ibge" class="input" placeholder="IBGE">
-            <button type="button" onclick="buscacep()">Buscar</button>
-            <button type="button" id="limpar" onclick="limpar()">Limpar</button>
+            <input type="text" id="logradouro" class="input" placeholder="Logradouro" disabled>
+            <input type="text" id="bairro" class="input" placeholder="Bairro" disabled>
+            <input type="text" id="cidade" class="input" placeholder="Cidade" disabled>
+            <input type="text" id="uf" class="input" placeholder="UF" disabled>
+            <input type="text" id="ibge" class="input" placeholder="IBGE" disabled>
+            <button type="button" onclick="buscacep()">Buscar</button disabled>
+            <button type="button" id="limpar" onclick="limpar()">Limpar</button disabled>
         </div>
     </div>
 <script src="main.js"></script>

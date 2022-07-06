@@ -36,6 +36,8 @@ function limpar() {
 
 function modoDark() {
   let fundo = document.querySelector(".container");
+  let caixaBusca = document.querySelector(".caixa_de_busca");
 
-  fundo.style.cssText = "background-color: black";
+  fundo.classList.toggle("containerDark");
+  caixaBusca.classList.toggle("caixa_de_busca_Dark");
 }

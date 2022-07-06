@@ -1,7 +1,7 @@
 function buscacep() {
   var cep = document.getElementById("Cep").value;
 
-  const busca = new Request("http://viacep.com.br/ws/" + cep + "/json/");
+  const busca = new Request("https://viacep.com.br/ws/" + cep + "/json/");
   let dados;
 
   if (!cep) alert("Digite um CEP");
